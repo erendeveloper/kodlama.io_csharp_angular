@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("hw3")]
+[assembly: AssemblyTitle("ClassMetotDemo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("hw3")]
+[assembly: AssemblyProduct("ClassMetotDemo")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("982b1d62-e4ac-4801-86ee-1de6e6f09055")]
+[assembly: Guid("40f0f779-dcbd-46d6-9d81-97c6163e19cf")]
 
 // Version information for an assembly consists of the following four values:
 //
