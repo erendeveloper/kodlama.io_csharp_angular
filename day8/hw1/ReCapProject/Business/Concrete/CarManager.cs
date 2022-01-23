@@ -10,23 +10,39 @@ namespace Business.Concrete
     public class CarManager : ICarService
     {
         ICarDal _carDal;
+        ICarCheckService _carCheckService;
 
-        public CarManager(ICarDal carDal)
+        public CarManager(ICarDal carDal, ICarCheckService carCheckService)
         {
             _carDal = carDal;
+            _carCheckService = carCheckService;
         }
 
         public void Add(Car car)
         {
-            CarCheckManager carCheck = new CarCheckManager(car);
-            if(carCheck.State == true)
+            bool state = true;
+            if (!_carCheckService.CheckDailyPrice(car))
+            {
+                state = false;
+                //throw new Exception("Daily price must be greater than 0.");
+                Console.WriteLine("Daily price must be greater than 0.");
+            }
+            if (!_carCheckService.CheckDescription(car))
+            {
+                state = false;
+                //throw new Exception("Description length must be minimum 2 characters.");
+                Console.WriteLine("Description length must be minimum 2 characters.");
+            }
+
+            if(state == true)
             {
                 _carDal.Add(car);
             }
             else
             {
-                Console.WriteLine(carCheck.Message);
+                Console.WriteLine("The car cannot be added.Fix the car info above.");
             }
+                    
             
         }
 

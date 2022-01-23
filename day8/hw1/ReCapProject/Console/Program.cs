@@ -33,7 +33,7 @@ namespace ConsoleUI
 
             //EntityFramework
 
-            CarManager carManager = new CarManager(new EfCarDal());
+            CarManager carManager = new CarManager(new EfCarDal(), new CarCheckManager());
 
             Car car1 = new Car { 
                 Id = 1, 
