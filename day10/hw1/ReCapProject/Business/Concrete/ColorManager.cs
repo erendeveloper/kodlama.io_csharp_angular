@@ -22,7 +22,7 @@ namespace Business.Concrete
         public IResult Add(Color color)
         {
             _colorDal.Add(color);
-            return new SuccessResult(Messages.ItemUpdated);
+            return new SuccessResult(Messages.ItemAdded);
         }
 
         public IResult Delete(Color color)
