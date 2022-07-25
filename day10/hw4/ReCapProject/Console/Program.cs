@@ -25,10 +25,10 @@ namespace ConsoleUI
             //AddUsers(userManager);
 
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
-            AddCustomers(customerManager);
+            //AddCustomers(customerManager);
 
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            AddRentals(rentalManager);
+            //AddRentals(rentalManager);
             ListRentals(rentalManager);
 
         }

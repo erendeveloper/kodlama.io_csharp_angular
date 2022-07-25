@@ -29,10 +29,12 @@ namespace Business.Concrete
             if (!_carCheckService.CheckDailyPrice(car))
             {
                 errorMessage += Messages.ItemPriceInvalid;
+                state=false;
             }
             if (!_carCheckService.CheckDescription(car))
             {
                 errorMessage += Messages.ItemDescriptionInvalid;
+                state=false;
             }
 
             if(state == true)

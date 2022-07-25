@@ -29,10 +29,12 @@ namespace Business.Concrete
             if (!_carCheckService.CheckDailyPrice(car))
             {
                 errorMessage += "Daily price must be greater than 0.";
+                state=false;
             }
             if (!_carCheckService.CheckDescription(car))
             {
                 errorMessage += "Description length must be at least 2 characters.";
+                state=false;
             }
 
             if(state == true)
