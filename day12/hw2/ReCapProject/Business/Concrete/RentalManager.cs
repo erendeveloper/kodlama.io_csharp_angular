@@ -21,7 +21,8 @@ namespace Business.Concrete
 
         public IResult Add(Rental rental)
         {
-            if (rental.ReturnDate != null)
+            var carRentalResult = _rentalDal.Get(r => r.CarId == rental.CarId && r.ReturnDate == null);
+            if (carRentalResult==null)
             {
                 _rentalDal.Add(rental);
                 return new SuccessResult(Messages.ItemAdded);
@@ -29,8 +30,7 @@ namespace Business.Concrete
             else
             {
                 return new ErrorResult("The car is already rented");
-            }
-            
+            }           
         }
 
         public IResult Delete(Rental rental)
