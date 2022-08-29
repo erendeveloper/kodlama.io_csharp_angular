@@ -1,0 +1,9 @@
+<ul class="list-group">
+    <li (click)="resetCurrentCar()" 
+    routerLink = ""
+    [class]="getAllCarClass()" >All Cars</li>
+    <li (click)="setCurrentCar(car)" 
+    routerLink= "/cars/images/{{car.id}}"
+    *ngFor="let car of cars" 
+    [class]="getCurrentCarClass(car)">{{car.id}}</li>
+</ul>
